@@ -1,0 +1,350 @@
+
+
+
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mirazh</title>
+    <link rel="stylesheet" href="styles.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+
+</head>
+<body>
+
+<header class="header">
+  <div class="header__logo">
+    <a href="index.html">
+      <img src="log.png" alt="Новый логотип" class="header__logo-image">
+    </a>
+    <p class="header__subtitle">территория красивых людей</p>
+  </div>
+  <nav class="header__nav">
+    <ul class="header__nav-list">
+      <li class="header__nav-item"><a href="Yslygi.html" class="header__nav-link" style="text-decoration: none;color: #000; padding-right: 10px;">Услуги</a></li>
+      <li class="header__nav-item"><a href="Online-record.html" class="header__nav-link" style="text-decoration: none;color: #000;padding-right: 10px;">Онлайн-запись</a></li>
+      <li class="header__nav-item"><a href="blog.html" class="header__nav-link" style="text-decoration: none;;color: #000;">Блог</a></li>
+    </ul>
+  </nav>
+  <div class="header__buttons">
+    <button id="callSalonButton" class="header__buttons__button">Позвонить в салон</button>
+    <button id="personalAccountButton" class="header__buttons__button" onclick="openNewPage()">Личный кабинет</button>
+    <img src="zvon.png" alt="Позвонить в салон" class="header__buttons__image" id="callSalonImage" onclick="callSalon()">
+    <img src="User.png" alt="Личный кабинет" class="header__buttons__image" onclick="openNewPage()">
+  </div>
+</header>
+
+    <script>
+      
+      function openNewPage() {
+        // Замените "new-page.html" на путь к вашей HTML странице
+        window.location.href = "authorization.html";
+      }
+    
+document.addEventListener("DOMContentLoaded", function() {
+  const modal = document.getElementById("custom-modal");
+  const openModalBtn = document.getElementById("callSalonButton");
+  const openModalImg = document.getElementById("callSalonImage"); // Добавили изображение
+  const closeModalBtn = document.getElementById("custom-close-modal");
+
+  function openModal() {
+    modal.style.display = "block";
+  }
+
+  openModalBtn.addEventListener("click", openModal);
+  openModalImg.addEventListener("click", openModal); // Добавили слушатель события для изображения
+
+  closeModalBtn.addEventListener("click", function() {
+    modal.style.display = "none";
+  });
+
+  window.addEventListener("click", function(event) {
+    if (event.target === modal) {
+      modal.style.display = "none";
+    }
+  });
+});
+$(document).ready(function() {
+    $('.custom-modal__submit').click(function(e) {
+        e.preventDefault();
+        
+        var name = $('#custom-name').val();
+        var phone = $('#custom-phone').val();
+        
+        $.ajax({
+            type: 'POST',
+            url: 'submit_form.php',
+            data: {
+                'custom-name': name,
+                'custom-phone': phone
+            },
+            success: function(response) {
+                alert(response); // Показываем сообщение об успешной отправке
+                // Опционально: закрытие модального окна или другие действия
+            },
+            error: function(xhr, status, error) {
+                alert('Произошла ошибка при отправке данных: ' + error); // Показываем сообщение об ошибке
+            }
+        });
+    });
+});
+</script>
+<div class="custom-modal" id="custom-modal">
+  <div class="custom-modal__content">
+      <span class="custom-modal__close" id="custom-close-modal">&times;</span>
+      <h2 class="custom-modal__title">Есть вопросы?</h2>
+      <p class="custom-modal__subtitle">Оставьте Ваши данные и мы свяжемся с Вами!</p>
+      <!-- Форма для отправки данных -->
+      <form class="custom-modal__form" method="POST" action="submit_question.php">
+          <div class="custom-modal__form-group">
+              <label for="custom-name" class="custom-modal__label">Как Вас зовут?*</label>
+              <input type="text" id="custom-name" name="custom-name" class="custom-modal__input" placeholder="Как Вас зовут?*" required>
+          </div>
+          <div class="custom-modal__form-group">
+              <label for="custom-phone" class="custom-modal__label">Контактный телефон</label>
+              <input type="text" id="custom-phone" name="custom-phone" class="custom-modal__input" placeholder="Контактный телефон">
+              <p class="custom-modal__note">*Необязательно</p>
+          </div>
+          <button type="submit" class="custom-modal__submit">Перезвоните мне</button>
+      </form>
+    </div>
+  </div>
+  
+
+
+
+
+
+    <div class="full-width-image">
+      <img src="Screenshot 2024-06-17 205202.png" alt="">
+    </div>
+
+   
+   
+   <div class="about">
+    <div class="about__container">
+    <div class="about__title">
+      <h2 style="font-size: 2.5rem;">О нас</h2>
+    </div>
+    <div class="about__content">
+      <div class="about__description">
+        <img src="icons8-круг-50.png" alt="Иконка красоты">
+        <p style="font-size: 1.5rem;">Мираж салон красоты, где ваша красота оживает и становится реальностью.</p>
+      </div>
+      <div class="about__services">
+        <img src="icons8-круг-50.png" alt="Иконка шестеренки">
+        <p style="font-size: 1.5rem;">Мы предлагаем уникальный опыт, сочетающий в себе профессионализм, инновационные подходы и необычный современный дизайн.</p>
+      </div>
+      <div class="about__atmosphere">
+        <img src="icons8-круг-50.png" alt="Иконка сердца">
+        <p style="font-size: 1.5rem;">Мы стремимся создать атмосферу, в которой каждый клиент чувствует себя особенным.</p>
+      </div>
+      <div class="about__technologies">
+        <img src="icons8-круг-50.png" alt="Иконка микросхемы">
+        <p style="font-size: 1.5rem;">Мы постоянно следим за последними тенденциями в индустрии красоты и используем только самые современные технологии и продукты.</p>
+      </div>
+      <div class="about__guarantee">
+        <img src="icons8-круг-50.png" alt="Иконка галочки">
+        <p style="font-size: 1.5rem;">Мы гарантируем, что каждое посещение станет для вас незабываемым и оставит только самые положительные впечатления. Доверьте свою красоту профессионалам и ощутите настоящий мир магии и преображения в салоне красоты "Мираж".</p>
+      </div>
+    </div>
+  </div>
+  </div>
+  
+  
+  <div class="full-width-image">
+    <img src="Screenshot 2024-06-17 225357.png" alt="">
+  </div>
+
+  
+  <section class="history">
+    <div class="history__container">
+      <h2 class="history__title" style="font-size: 2.5rem;">История развития</h2>
+      <div class="history__content">
+        <p class="history__text" style="font-size: 1.5rem;">
+          История салона красоты "Мираж" началась в 2019 году, когда он был открыт. С самого начала
+          салон стремился к достижению высоких стандартов качества и предоставлению
+          первоклассных услуг своим клиентам.
+        </p>
+        <p class="history__text" style="font-size: 1.5rem;">
+          За короткое время существования наш салон смог достичь значительных успехов и
+          достижений.
+        </p>
+        <p class="history__text" style="font-size: 1.5rem;">
+          Салон стремится завоевать популярность среди клиентов благодаря своему необычному и
+          современному дизайну.
+        </p>
+        <p class="history__text" style="font-size: 1.5rem;">
+          Салон красоты "Мираж" продолжает развиваться и стремиться к новым высотам в индустрии
+          красоты. Он гордится своими достижениями и готов предложить своим клиентам
+          непревзойденный уровень сервиса и красоты.
+        </p>
+      </div>
+    </div>
+  </section>
+
+
+  <div class="full-width-image">
+    <img src="Screenshot 2024-06-17 232009.png" alt="">
+  </div>
+
+
+
+  <div class="activity">
+    <div class="activity__container">
+    <div class="activity__title">
+      <h2 style="font-size: 2.5rem;">Деятельность</h2>
+    </div>
+    <div class="activity__content">
+      <div class="activity__description">
+        <p style="font-size: 1.5rem;">Наш салон красоты предлагает широкий спектр услуг для ухода за внешностью и повышения самочувствия клиентов.</p>
+      </div>
+      <div class="activity__services">
+        <img src="icons8-круг-50.png" alt="Иконка шестеренки">
+        <p style="font-size: 1.5rem;">Парикмахерские услуги: стрижки, укладки, окрашивание волос, уход за волосами и кожей головы.</p>
+      </div>
+      <div class="activity__atmosphere">
+        <img src="icons8-круг-50.png" alt="Иконка сердца">
+        <p style="font-size: 1.5rem;">Маникюр и педикюр: классический и европейский маникюр, наращивание ногтей, дизайн ногтей, уход за руками и ногами.</p>
+      </div>
+      <div class="activity__team">
+        <img src="icons8-круг-50.png" alt="Иконка группы людей">
+        <p style="font-size: 1.5rem;">Услуги по макияжу: повседневный макияж, вечерний макияж, свадебный макияж, коррекция бровей.</p>
+      </div>
+      <div class="activity__technologies">
+        <img src="icons8-круг-50.png" alt="Иконка микросхемы">
+        <p style="font-size: 1.5rem;">Массаж: классический массаж, антицеллюлитный массаж, релаксационный массаж.</p>
+      </div>
+      <div class="activity__guarantee">
+        <img src="icons8-круг-50.png" alt="Иконка галочки">
+        <p style="font-size: 1.5rem;">Мы гарантируем, что каждое посещение станет для вас незабываемым и оставит только самые положительные впечатления. Доверьте свою красоту профессионалам и ощутите настоящий мир магии и преображения в салоне красоты "Мираж".</p>
+      </div>
+    </div>
+  </div>
+  </div>
+
+
+  <section class="achievements">
+    <div class="achievements__container">
+      <h2 class="achievements__title" style="font-size: 2.5rem;">Достижения</h2>
+      <div class="achievements__content">
+        <p class="achievements__text" style="font-size: 1.5rem;">
+          Наш салон красоты гордится своими достижениями и активным участием в бьюти-индустрии. Мы постоянно организуем различные конкурсы и семинары, чтобы наши мастера могли проявить себя и развиваться в своей профессии.
+        </p>
+      </div>
+    </div>
+  </section>
+
+
+  <div class="full-width-image">
+    <img src="Screenshot 2024-06-18 014416.png" alt="">
+  </div>
+
+
+
+  <div class="advantages">
+    <div class="advantages__container">
+    <div class="advantages__title">
+      <h2 style="font-size: 2.5rem;">Приемущества компании</h2>
+    </div>
+    <div class="advantages__content">
+      <div class="advantages__description">
+        <img src="icons8-круг-50.png" alt="Иконка красоты">
+        <p style="font-size: 1.5rem;">Профессиональная команда мастеров. Мираж имеет высококвалифицированных и опытных мастеров, которые постоянно совершенствуют свои навыки и следят за последними тенденциями в индустрии красоты.</p>
+      </div>
+      <div class="advantages__services">
+        <img src="icons8-круг-50.png" alt="Иконка шестеренки">
+        <p style="font-size: 1.5rem;">Индивидуальный подход к каждому клиенту. Наш салон стремится создать уютную и комфортную атмосферу для своих клиентов. Каждый клиент получает индивидуальное внимание и персонализированный подход к своим потребностям.</p>
+      </div>
+      <div class="advantages__atmosphere">
+        <img src="icons8-круг-50.png" alt="Иконка сердца">
+        <p style="font-size: 1.5rem;">Использование высококачественных продуктов. Мы работаем только с проверенными и качественными косметическими продуктами, чтобы обеспечить наилучшие результаты для своих клиентов.</p>
+      </div>
+      <div class="advantages__team">
+        <img src="icons8-круг-50.png" alt="Иконка группы людей">
+        <p style="font-size: 1.5rem;">Приятная атмосфера. Салон Мираж создает приятную и расслабляющую атмосферу, где клиенты могут отдохнуть и насладиться процедурами красоты.</p>
+      </div>
+      
+    </div>
+  </div>
+  </div>
+
+
+  <div class="contacts">
+    <div class="contacts__container">
+    <h2 class="contacts__title">Контакты</h2>
+    <div class="contacts__info">
+      <p class="contacts__phone">
+        Номер телефона <a href="tel:+72998583235" class="contacts__phone-link">+7(299)-(858)-32-35</a>
+      </p>
+      <p class="contacts__address">
+        Адрес: <span class="contacts__address-value">421340, г. Москва, ул. Полбина, д. 1, кв. 2</span>
+      </p>
+    </div>
+    <div class="contacts__socials">
+      <div class="contacts__social">
+        <span class="contacts__social-label">Мы в ВК</span>
+        <a href="https://vk.com/mirazh" class="contacts__social-link">vk.com/mirazh</a>
+      </div>
+      <div class="contacts__social">
+        <span class="contacts__social-label">Мы в Инстаграме</span>
+        <a href="https://inst.com/mirazh" class="contacts__social-link">inst.com/mirazh</a>
+      </div>
+      <div class="contacts__social">
+        <span class="contacts__social-label">Мы в Телеграмме</span>
+        <a href="https://web.telegram.org/mirazh" class="contacts__social-link">web.telegram.org/mirazh</a>
+      </div>
+    </div>
+  </div>
+</div>
+  
+  
+
+<footer class="footer">
+  <div class="footer__column footer__column--about" >
+      <h3 class="footer__title">О нас</h3>
+      <ul class="footer__list">
+          <li class="footer__item"><a href="index.html" class="footer__link">История развития</a></li>
+          <li class="footer__item"><a href="index.html" class="footer__link">Сфера деятельности</a></li>
+          <li class="footer__item"><a href="index.html" class="footer__link">Достижения</a></li>
+          <li class="footer__item"><a href="index.html" class="footer__link">Преимущества компании</a></li>
+          <li class="footer__item"><a href="index.html" class="footer__link">Контакты</a></li>
+      </ul>
+  </div>
+  <div class="footer__column footer__column--services">
+      <h3 class="footer__title">Услуги</h3>
+      <ul class="footer__list">
+          <li class="footer__item"><a href="Yslygi.html" class="footer__link">Парикмахер</a></li>
+          <li class="footer__item"><a href="Yslygi.html" class="footer__link">Ногтевой сервис</a></li>
+          <li class="footer__item"><a href="Yslygi.html" class="footer__link">Макияж</a></li>
+          <li class="footer__item"><a href="Yslygi.html" class="footer__link">Косметология</a></li>
+          <li class="footer__item"><a href="Yslygi.html" class="footer__link">Уход за телом</a></li>
+      </ul>
+  </div>
+  <div class="footer__column footer__column--blog">
+      <h3 class="footer__title">Блог</h3>
+      <ul class="footer__list">
+          <li class="footer__item"><a href="blog.html" class="footer__link">Статьи</a></li>
+          <li class="footer__item"><a href="blog.html" class="footer__link">Отзывы</a></li>
+          <li class="footer__item"><a href="blog.html" class="footer__link">Новости</a></li>
+          <li class="footer__item"><a href="blog.html" class="footer__link">Акции</a></li>
+          <li class="footer__item"><a href="blog.html" class="footer__link">Обучение</a></li>
+      </ul>
+  </div>
+  <div class="footer__column footer__column--social">
+    <h3 class="footer__title">Мы в соц.сетях</h3>
+      <div class="footer__social-icons">
+          <a href="#" class="footer__social-link"><img src="Screenshot 2024-06-18 131306.png" alt="Instagram"></a>
+          <a href="#" class="footer__social-link"><img src="vk.png" alt="VK"></a>
+          <a href="#" class="footer__social-link"><img src="Screenshot 2024-06-18 131415.png" alt="Telegram"></a>
+      </div>
+  </div>
+  <div class="footer__bottom">
+      <p class="footer__copyright" >©2024 Mirazh. Все права защищены.</p>
+  </div>
+</footer>
+
+
+</body>
+</html>

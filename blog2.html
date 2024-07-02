@@ -1,0 +1,174 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mirazh</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <header class="header">
+        <div class="header__logo">
+          <a href="index.html">
+            <img src="log.png" alt="Новый логотип" class="header__logo-image">
+          </a>
+          <p class="header__subtitle">территория красивых людей</p>
+        </div>
+        <nav class="header__nav">
+          <ul class="header__nav-list">
+            <li class="header__nav-item"><a href="Yslygi.html" class="header__nav-link" style="text-decoration: none;color: #000; padding-right: 10px; ">Услуги</a></li>
+            <li class="header__nav-item"><a href="Online-record.html" class="header__nav-link" style="text-decoration: none;color: #000;padding-right: 10px;">Онлайн-запись</a></li>
+            <li class="header__nav-item"><a href="blog.html" class="header__nav-link" style="text-decoration: none;;color: #000; background-color: #667FFF; padding: 5px; border-radius: 5px;">Блог</a></li>
+          </ul>
+        </nav>
+        <div class="header__buttons">
+          <button id="callSalonButton" class="header__buttons__button">Позвонить в салон</button>
+          <button id="personalAccountButton" class="header__buttons__button" onclick="openNewPage()">Личный кабинет</button>
+          <img src="zvon.png" alt="Позвонить в салон" class="header__buttons__image" id="callSalonImage" onclick="callSalon()">
+          <img src="User.png" alt="Личный кабинет" class="header__buttons__image" onclick="openNewPage()">
+        </div>
+      </header>
+          <script>
+            
+            function openNewPage() {
+              // Замените "new-page.html" на путь к вашей HTML странице
+              window.location.href = "authorization.html";
+            }
+          
+      document.addEventListener("DOMContentLoaded", function() {
+        const modal = document.getElementById("custom-modal");
+        const openModalBtn = document.getElementById("callSalonButton");
+        const openModalImg = document.getElementById("callSalonImage"); // Добавили изображение
+        const closeModalBtn = document.getElementById("custom-close-modal");
+      
+        function openModal() {
+          modal.style.display = "block";
+        }
+      
+        openModalBtn.addEventListener("click", openModal);
+        openModalImg.addEventListener("click", openModal); // Добавили слушатель события для изображения
+      
+        closeModalBtn.addEventListener("click", function() {
+          modal.style.display = "none";
+        });
+      
+        window.addEventListener("click", function(event) {
+          if (event.target === modal) {
+            modal.style.display = "none";
+          }
+        });
+      });
+            </script>
+  
+  
+    <div class="youth-secrets">
+      <li class="youth-secrets__title">Секреты молодости: 5 простых шагов к идеальной коже</li>
+      <p class="youth-secrets__intro">
+          Каждая женщина мечтает о красивой и здоровой коже. В этой статье мы расскажем о мерах, которые помогут вам достичь идеальной кожи. От правильного очищения до регулярного увлажнения – узнайте, какие продукты и процедуры помогут вам сохранить молодость и красоту вашей кожи.
+      </p>
+      <div class="youth-secrets__steps">
+          <div class="youth-secrets__step">
+              <img src="clim1.png" alt="Правильное очищение" class="youth-secrets__image">
+              <div class="youth-secrets__content">
+                  <h3 class="youth-secrets__subtitle">Правильное очищение</h3>
+                  <p class="youth-secrets__text">
+                      Первый и самый важный шаг к идеальной коже - это правильное очищение. Ежедневное удаление макияжа и очищение лица помогут избавиться от загрязнений, излишков кожного жира и мертвых клеток. Используйте мягкие очищающие средства, подходящие для вашего типа кожи.
+                  </p>
+              </div>
+          </div>
+          <div class="youth-secrets__step">
+              <img src="clim2.png" alt="Экфолиация" class="youth-secrets__image">
+              <div class="youth-secrets__content">
+                  <h3 class="youth-secrets__subtitle">Экфолиация</h3>
+                  <p class="youth-secrets__text">
+                      Регулярная эксфолиация поможет удалить омертвевшие клетки с поверхности кожи и стимулировать обновление клеток. Используйте мягкий пилинг или скраб, который подходит для вашего типа кожи.
+                  </p>
+              </div>
+          </div>
+          <div class="youth-secrets__step">
+              <img src="clim3.png" alt="Защита от солнца" class="youth-secrets__image">
+              <div class="youth-secrets__content">
+                  <h3 class="youth-secrets__subtitle">Защита от солнца</h3>
+                  <p class="youth-secrets__text">
+                      Не забывайте использовать солнцезащитный крем с высоким уровнем защиты от УФ-лучей. Наносите его на кожу за 30 минут до выхода на улицу и периодически обновляйте нанесение в течение дня.
+                  </p>
+              </div>
+          </div>
+          <div class="youth-secrets__step">
+              <img src="clim4.png" alt="Увлажнение" class="youth-secrets__image">
+              <div class="youth-secrets__content">
+                  <h3 class="youth-secrets__subtitle">Увлажнение</h3>
+                  <p class="youth-secrets__text">
+                      Используйте увлажняющий крем или сыворотку, которые подходят для вашего типа кожи. Не забывайте увлажнять кожу не только лица, но и шеи, декольте и других областей, которые подвержены сухости.
+                  </p>
+              </div>
+          </div>
+          <div class="youth-secrets__step">
+              <img src="clim5.png" alt="Здоровый образ жизни" class="youth-secrets__image">
+              <div class="youth-secrets__content">
+                  <h3 class="youth-secrets__subtitle">Здоровый образ жизни</h3>
+                  <p class="youth-secrets__text">
+                      Правильное питание, умеренная физическая активность, достаточный сон и отказ от вредных привычек помогут вашей коже выглядеть молодой и сияющей.
+                  </p>
+              </div>
+          </div>
+      </div>
+      <div class="youth-secrets__links">
+          <li class="youth-secrets__link">Топ 10 трендов этого сезона в макияже</li>
+          <li class="youth-secrets__link">Здоровые волосы: секреты красоты и ухода</li>
+      </div>
+  </div>
+  </div>
+
+  
+      
+
+      
+
+  <footer class="footer">
+    <div class="footer__column footer__column--about">
+        <h3 class="footer__title">О нас</h3>
+        <ul class="footer__list">
+            <li class="footer__item"><a href="index.html" class="footer__link">История развития</a></li>
+            <li class="footer__item"><a href="index.html" class="footer__link">Сфера деятельности</a></li>
+            <li class="footer__item"><a href="index.html" class="footer__link">Достижения</a></li>
+            <li class="footer__item"><a href="index.html" class="footer__link">Преимущества компании</a></li>
+            <li class="footer__item"><a href="index.html" class="footer__link">Контакты</a></li>
+        </ul>
+    </div>
+    <div class="footer__column footer__column--services">
+        <h3 class="footer__title">Услуги</h3>
+        <ul class="footer__list">
+            <li class="footer__item"><a href="Yslygi.html" class="footer__link">Парикмахер</a></li>
+            <li class="footer__item"><a href="Yslygi.html" class="footer__link">Ногтевой сервис</a></li>
+            <li class="footer__item"><a href="Yslygi.html" class="footer__link">Макияж</a></li>
+            <li class="footer__item"><a href="Yslygi.html" class="footer__link">Косметология</a></li>
+            <li class="footer__item"><a href="Yslygi.html" class="footer__link">Уход за телом</a></li>
+        </ul>
+    </div>
+    <div class="footer__column footer__column--blog">
+        <h3 class="footer__title">Блог</h3>
+        <ul class="footer__list">
+            <li class="footer__item"><a href="blog.html" class="footer__link">Статьи</a></li>
+            <li class="footer__item"><a href="blog.html" class="footer__link">Отзывы</a></li>
+            <li class="footer__item"><a href="blog.html" class="footer__link">Новости</a></li>
+            <li class="footer__item"><a href="blog.html" class="footer__link">Акции</a></li>
+            <li class="footer__item"><a href="blog.html" class="footer__link">Обучение</a></li>
+        </ul>
+    </div>
+    <div class="footer__column footer__column--social">
+      <h3 class="footer__title">Мы в соц.сетях</h3>
+        <div class="footer__social-icons">
+            <a href="#" class="footer__social-link"><img src="Screenshot 2024-06-18 131306.png" alt="Instagram"></a>
+            <a href="#" class="footer__social-link"><img src="vk.png" alt="VK"></a>
+            <a href="#" class="footer__social-link"><img src="Screenshot 2024-06-18 131415.png" alt="Telegram"></a>
+        </div>
+    </div>
+    <div class="footer__bottom">
+        <p class="footer__copyright" >©2024 Mirazh. Все права защищены.</p>
+    </div>
+  </footer>
+
+</body>
+</html>
+      

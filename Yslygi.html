@@ -1,0 +1,266 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mirazh</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+ 
+<header class="header">
+  <div class="header__logo">
+    <a href="index.html">
+      <img src="log.png" alt="Новый логотип" class="header__logo-image">
+    </a>
+    <p class="header__subtitle">территория красивых людей</p>
+  </div>
+  <nav class="header__nav">
+    <ul class="header__nav-list">
+      <li class="header__nav-item"><a href="Yslygi.html" class="header__nav-link" style="text-decoration: none;color: #000; padding-right: 10px; background-color: #667FFF; padding: 5px; border-radius: 5px;">Услуги</a></li>
+      <li class="header__nav-item"><a href="Online-record.html" class="header__nav-link" style="text-decoration: none;color: #000;padding-right: 10px;">Онлайн-запись</a></li>
+      <li class="header__nav-item"><a href="blog.html" class="header__nav-link" style="text-decoration: none;;color: #000;">Блог</a></li>
+    </ul>
+  </nav>
+  <div class="header__buttons">
+    <button id="callSalonButton" class="header__buttons__button">Позвонить в салон</button>
+    <button id="personalAccountButton" class="header__buttons__button" onclick="openNewPage()">Личный кабинет</button>
+    <img src="zvon.png" alt="Позвонить в салон" class="header__buttons__image" id="callSalonImage" onclick="callSalon()">
+    <img src="User.png" alt="Личный кабинет" class="header__buttons__image" onclick="openNewPage()">
+  </div>
+</header>
+    <script>
+      
+      function openNewPage() {
+        // Замените "new-page.html" на путь к вашей HTML странице
+        window.location.href = "authorization.html";
+      }
+    
+document.addEventListener("DOMContentLoaded", function() {
+  const modal = document.getElementById("custom-modal");
+  const openModalBtn = document.getElementById("callSalonButton");
+  const openModalImg = document.getElementById("callSalonImage"); // Добавили изображение
+  const closeModalBtn = document.getElementById("custom-close-modal");
+
+  function openModal() {
+    modal.style.display = "block";
+  }
+
+  openModalBtn.addEventListener("click", openModal);
+  openModalImg.addEventListener("click", openModal); // Добавили слушатель события для изображения
+
+  closeModalBtn.addEventListener("click", function() {
+    modal.style.display = "none";
+  });
+
+  window.addEventListener("click", function(event) {
+    if (event.target === modal) {
+      modal.style.display = "none";
+    }
+  });
+});
+      </script>
+
+
+      <div class="menu">
+        <div class="menu__categories">
+          <div class="menu__category">
+            <a href="Services.html">
+            <img src="q1.png" alt="Парикмахер-стилист">
+            </a>
+            <ul class="menu__category-list">
+              <li class="menu__category-item">
+                <span class="menu__category-item-name">Стрижка волос мужская/женская</span>
+                <span class="menu__category-item-price">2500/3000 Р</span>
+              </li>
+              <li class="menu__category-item">
+                <span class="menu__category-item-name">Укладка волос</span>
+                <span class="menu__category-item-price">от 2000 Р</span>
+              </li>
+              <li class="menu__category-item">
+                <span class="menu__category-item-name">Уход волос</span>
+                <span class="menu__category-item-price">от 2500 Р</span>
+              </li>
+              <li class="menu__category-item">
+                <span class="menu__category-item-name">Окрашивание волос</span>
+                <span class="menu__category-item-price">от 4000 Р</span>
+              </li>
+            </ul>
+          </div>
+          <div class="menu__category">
+            <a href="Services.html">
+            <img src="q2.png" alt="Ногтевой сервис">
+            </a>
+            <ul class="menu__category-list">
+              <li class="menu__category-item">
+                <span class="menu__category-item-name">Классический / комбинированный маникюр + гель-лак</span>
+                <span class="menu__category-item-price">От 1300 Р</span>
+              </li>
+              <li class="menu__category-item">
+                <span class="menu__category-item-name">Классический / комбинированный педикюр + гель-лак</span>
+                <span class="menu__category-item-price">От 2500 Р</span>
+              </li>
+              <li class="menu__category-item">
+                <span class="menu__category-item-name">Выравнивание ногтевой пластины</span>
+                <span class="menu__category-item-price">600 Р</span>
+              </li>
+              <li class="menu__category-item">
+                <span class="menu__category-item-name">Снятие гель-лак</span>
+                <span class="menu__category-item-price">300 Р</span>
+              </li>
+            </ul>
+          </div>
+          <div class="menu__category">
+            <a href="Services.html">
+            <img src="q3.png" alt="Ногтевой сервис">
+            </a>
+            <ul class="menu__category-list">
+              <li class="menu__category-item">
+                <span class="menu__category-item-name">Бикини сахарной пастой (классика)</span>
+                <span class="menu__category-item-price">1000 Р</span>
+              </li>
+              <li class="menu__category-item">
+                <span class="menu__category-item-name">Лазерная эпиляция Подмышки</span>
+                <span class="menu__category-item-price">1900 Р</span>
+              </li>
+              <li class="menu__category-item">
+                <span class="menu__category-item-name">Подмышки сахарной пастой</span>
+                <span class="menu__category-item-price">1000 Р</span>
+              </li>
+              <li class="menu__category-item">
+                <span class="menu__category-item-name">Ноги полностью воском</span>
+                <span class="menu__category-item-price" style="margin-left: 15px;">1500 Р</span>
+              </li>
+              <li class="menu__category-item">
+                <span class="menu__category-item-name">Ноги полностью сахарной пастой</span>
+                <span class="menu__category-item-price" style="margin-left: 15px;">2900 Р</span>
+              </li>
+              <li class="menu__category-item">
+                <span class="menu__category-item-name">Лазерная эпиляция Ноги (голень)</span>
+                <span class="menu__category-item-price" style="margin-left: 15px;">3600 Р</span>
+              </li>
+            </ul>
+          </div>
+          <div class="menu__category">
+            <a href="Services.html">
+            <img src="q4.png" alt="Ногтевой сервис">
+            </a>
+            <ul class="menu__category-list">
+              <li class="menu__category-item">
+                <span class="menu__category-item-name">Массаж лица (скульптурный)</span>
+                <span class="menu__category-item-price">3000 Р</span>
+              </li>
+              <li class="menu__category-item">
+                <span class="menu__category-item-name">Аппаратная косметология</span>
+                <span class="menu__category-item-price">3000 Р</span>
+              </li>
+              <li class="menu__category-item">
+                <span class="menu__category-item-name">Антицеллюлитная процедура T-shok</span>
+                <span class="menu__category-item-price">3500 Р</span>
+              </li>
+              <li class="menu__category-item">
+                <span class="menu__category-item-name">Общий классический массаж</span>
+                <span class="menu__category-item-price">3000 Р</span>
+              </li>
+            </ul>
+          </div>
+          <div class="menu__category">
+            <a href="Services.html">
+            <img src="q5.png" alt="Ногтевой сервис">
+            </a>
+            <ul class="menu__category-list">
+              <li class="menu__category-item">
+                <span class="menu__category-item-name">Инъекции Ботокс</span>
+                <span class="menu__category-item-price">3000 р</span>
+              </li>
+              <li class="menu__category-item">
+                <span class="menu__category-item-name">Контурная пластика (губы)</span>
+                <span class="menu__category-item-price">От 12000 Р</span>
+              </li>
+              <li class="menu__category-item">
+                <span class="menu__category-item-name">Ультразвуковая чистка</span>
+                <span class="menu__category-item-price">от 3500 Р</span>
+              </li>
+              <li class="menu__category-item">
+                <span class="menu__category-item-name">Липолитики</span>
+                <span class="menu__category-item-price">от 4000 ₽</span>
+              </li>
+            </ul>
+          </div>
+          <div class="menu__category">
+            <a href="Services.html">
+            <img src="q6.png" alt="Ногтевой сервис">
+            </a>
+            <ul class="menu__category-list">
+              <li class="menu__category-item">
+                <span class="menu__category-item-name">Перманентный макияж (Губы / Брови / Срелки)</span>
+                <span class="menu__category-item-price">8000 ₽</span>
+              </li>
+              <li class="menu__category-item">
+                <span class="menu__category-item-name">Ламинирование ресниц</span>
+                <span class="menu__category-item-price">3200 ₽</span>
+              </li>
+              <li class="menu__category-item">
+                <span class="menu__category-item-name">Ламинирование бровей (коррекцию и окрашивание)</span>
+                <span class="menu__category-item-price">3500 ₽</span>
+              </li>
+              <li class="menu__category-item">
+                <span class="menu__category-item-name">Наращивание ресниц полный объем</span>
+                <span class="menu__category-item-price">2600 ₽</span>
+              </li>
+            </ul>
+          </div>
+        </div>
+      </div>
+      
+      <div style="text-align: center;">
+        <button class="custom-button" style="text-align: center;"><a href="Online-record.html" style="text-decoration: none; color: #fff;">Записаться</a></button>
+      </div>
+
+      <footer class="footer">
+        <div class="footer__column footer__column--about">
+            <h3 class="footer__title">О нас</h3>
+            <ul class="footer__list">
+                <li class="footer__item"><a href="index.html" class="footer__link">История развития</a></li>
+                <li class="footer__item"><a href="index.html" class="footer__link">Сфера деятельности</a></li>
+                <li class="footer__item"><a href="index.html" class="footer__link">Достижения</a></li>
+                <li class="footer__item"><a href="index.html" class="footer__link">Преимущества компании</a></li>
+                <li class="footer__item"><a href="index.html" class="footer__link">Контакты</a></li>
+            </ul>
+        </div>
+        <div class="footer__column footer__column--services">
+            <h3 class="footer__title">Услуги</h3>
+            <ul class="footer__list">
+                <li class="footer__item"><a href="Yslygi.html" class="footer__link">Парикмахер</a></li>
+                <li class="footer__item"><a href="Yslygi.html" class="footer__link">Ногтевой сервис</a></li>
+                <li class="footer__item"><a href="Yslygi.html" class="footer__link">Макияж</a></li>
+                <li class="footer__item"><a href="Yslygi.html" class="footer__link">Косметология</a></li>
+                <li class="footer__item"><a href="Yslygi.html" class="footer__link">Уход за телом</a></li>
+            </ul>
+        </div>
+        <div class="footer__column footer__column--blog">
+            <h3 class="footer__title">Блог</h3>
+            <ul class="footer__list">
+                <li class="footer__item"><a href="blog.html" class="footer__link">Статьи</a></li>
+                <li class="footer__item"><a href="blog.html" class="footer__link">Отзывы</a></li>
+                <li class="footer__item"><a href="blog.html" class="footer__link">Новости</a></li>
+                <li class="footer__item"><a href="blog.html" class="footer__link">Акции</a></li>
+                <li class="footer__item"><a href="blog.html" class="footer__link">Обучение</a></li>
+            </ul>
+        </div>
+        <div class="footer__column footer__column--social">
+          <h3 class="footer__title">Мы в соц.сетях</h3>
+            <div class="footer__social-icons">
+                <a href="#" class="footer__social-link"><img src="Screenshot 2024-06-18 131306.png" alt="Instagram"></a>
+                <a href="#" class="footer__social-link"><img src="vk.png" alt="VK"></a>
+                <a href="#" class="footer__social-link"><img src="Screenshot 2024-06-18 131415.png" alt="Telegram"></a>
+            </div>
+        </div>
+        <div class="footer__bottom">
+            <p class="footer__copyright" >©2024 Mirazh. Все права защищены.</p>
+        </div>
+      </footer>
+
+</body>
+</html>
+      
